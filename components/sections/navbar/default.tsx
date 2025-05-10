@@ -1,10 +1,26 @@
 "use client";
 
+import React, { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import React, { useState } from "react";
-import Image from "next/image";
+
+interface MainNavbarProps {
+  logo?: React.ReactNode;
+  name?: string;
+  homeUrl?: string;
+  mobileLinks?: { text: string; href: string }[];
+  actions?: {
+    text: string;
+    href: string;
+    isButton: boolean;
+    variant: string;
+  }[];
+  showNavigation?: boolean;
+  menuItems?: { title: string; href: string }[];
+  className?: string;
+}
 
 export default function MainNavbar({
   logo = (
@@ -56,7 +72,7 @@ export default function MainNavbar({
     },
   ],
   className,
-}) {
+}: MainNavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

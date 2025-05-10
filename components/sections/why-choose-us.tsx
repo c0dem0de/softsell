@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { BadgeCheck, Lock, TrendingUp, Trophy } from "lucide-react";
+import { Lock } from "lucide-react";
 
 interface WhyChooseUsProps {
   className?: string;

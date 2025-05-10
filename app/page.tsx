@@ -35,6 +35,7 @@ export default function Home() {
             variant: "default",
           },
         ]}
+        className="" // <-- Add this line
       />
       <Hero />
       <HowItWorks />
