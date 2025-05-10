@@ -6,8 +6,6 @@ SoftSell is a Next.js application that provides a platform for buying and sellin
 
 - 🎨 **Modern UI with Dark Mode**: Clean, responsive design with full dark/light mode support
 - 💬 **Interactive Chat Assistant**: AI-powered chatbot with predefined prompts to help users navigate the platform
-- 🔍 **Smart Search**: Advanced filtering and searching of available licenses
-- 🔒 **Secure Transactions**: Bank-level encryption with escrow system for license transfers
 - 📱 **Fully Responsive**: Optimized for all device sizes from mobile to desktop
 - 🚀 **Next.js App Router**: Built with the latest Next.js features
 
