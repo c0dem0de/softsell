@@ -57,8 +57,4 @@ pnpm dev
 bun dev
 ```
 
-```
-
-```
-
 > Developed as a part of Credex Internship Assignment.
