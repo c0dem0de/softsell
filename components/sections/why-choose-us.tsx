@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Lock } from "lucide-react";
+import { Lock, ShieldCheck, Clock, ThumbsUp } from "lucide-react";
 
 interface WhyChooseUsProps {
   className?: string;
@@ -44,7 +44,49 @@ export default function WhyChooseUs({ className }: WhyChooseUsProps) {
             </div>
           </div>
 
-          {/* Remaining feature items remain unchanged */}
+          {/* Feature 2 */}
+          <div className="flex gap-4 p-6 rounded-lg border bg-card">
+            <div className="h-12 w-12 rounded-full bg-primary/10 dark:bg-8C52FF/20 text-primary dark:text-8C52FF flex items-center justify-center">
+              <ShieldCheck className="h-6 w-6" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Verified Transfers</h3>
+              <p className="text-muted-foreground">
+                Every license transfer is manually verified by our team to
+                ensure authenticity and compliance.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 3 */}
+          <div className="flex gap-4 p-6 rounded-lg border bg-card">
+            <div className="h-12 w-12 rounded-full bg-primary/10 dark:bg-8C52FF/20 text-primary dark:text-8C52FF flex items-center justify-center">
+              <Clock className="h-6 w-6" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Fast Payouts</h3>
+              <p className="text-muted-foreground">
+                Receive your funds quickly after a successful transaction—no
+                long waiting periods.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 4 */}
+          <div className="flex gap-4 p-6 rounded-lg border bg-card">
+            <div className="h-12 w-12 rounded-full bg-primary/10 dark:bg-8C52FF/20 text-primary dark:text-8C52FF flex items-center justify-center">
+              <ThumbsUp className="h-6 w-6" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">
+                Trusted by Thousands
+              </h3>
+              <p className="text-muted-foreground">
+                Join a growing community of satisfied users who trust SoftSell
+                for their software license needs.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
