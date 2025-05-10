@@ -6,7 +6,6 @@ import {
   ThumbsUp,
   Users,
   DollarSign,
-  RefreshCcw,
 } from "lucide-react";
 
 interface WhyChooseUsProps {
