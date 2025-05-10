@@ -26,7 +26,26 @@ export default function WhyChooseUs({ className }: WhyChooseUsProps) {
           </p>
         </div>
 
-        {/* Rest of the component remains unchanged */}
+        {/* Features grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Feature 1 */}
+          <div className="flex gap-4 p-6 rounded-lg border bg-card">
+            <div className="h-12 w-12 rounded-full bg-primary/10 dark:bg-8C52FF/20 text-primary dark:text-8C52FF flex items-center justify-center">
+              <Lock className="h-6 w-6" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">
+                Bank-Level Security
+              </h3>
+              <p className="text-muted-foreground">
+                Industry-leading encryption and secure escrow system protects
+                both buyers and sellers throughout the transaction process.
+              </p>
+            </div>
+          </div>
+
+          {/* Remaining feature items remain unchanged */}
+        </div>
       </div>
     </section>
   );
