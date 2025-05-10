@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { QuoteIcon } from "lucide-react";
+import { QuoteIcon, Star } from "lucide-react";
 import Image from "next/image";
 
 interface CustomerTestimonialsProps {
@@ -13,21 +13,30 @@ export default function CustomerTestimonials({
     {
       quote:
         "SoftSell helped us recover nearly $45,000 from unused enterprise licenses. The process was straightforward and secure.",
-      name: "Sarah Thompson",
-      title: "CTO, TechNova Solutions",
+      name: "Prajwal Ulli",
+      title: "Chief Spreadsheet Wizard, Sheets Solutions",
+      rating: 5,
     },
     {
       quote:
         "Through SoftSell, we found enterprise licenses at 60% off retail price. The savings were substantial for our growing team.",
-      name: "Michael Rodriguez",
-      title: "Operations Director, DataFlex Inc.",
+      name: "Rahul Kakkar",
+      title: "Mission Intellect, Takeover Inc.",
+      rating: 5,
+    },
+    {
+      quote:
+        "The support team was responsive and guided us through every step. Highly recommended for any business with surplus licenses.",
+      name: "Priya Patel",
+      title: "Caffeine Enthusiast, Bargain Inc.",
+      rating: 5,
     },
   ];
 
   return (
     <section
       id="testimonials"
-      className={cn("relative py-16 overflow-hidden", className)}
+      className={cn("relative py-20 overflow-hidden", className)}
     >
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
@@ -36,7 +45,7 @@ export default function CustomerTestimonials({
       </div>
 
       <div className="mx-auto max-w-container px-4">
-        <div className="flex flex-col items-center text-center mb-12">
+        <div className="flex flex-col items-center text-center mb-14">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             What Our{" "}
             <span className="text-primary dark:text-8C52FF">Customers Say</span>
@@ -47,20 +56,17 @@ export default function CustomerTestimonials({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, i) => (
             <blockquote
               key={i}
-              className="relative p-6 md:p-8 backdrop-blur-sm bg-background/50 dark:bg-background/20 rounded-xl border border-border/30 dark:border-primary/10 h-full shadow-sm"
+              className="relative flex flex-col p-7 md:p-8 backdrop-blur-sm bg-background/60 dark:bg-background/30 rounded-2xl border border-border/30 dark:border-primary/10 h-full shadow-md hover:shadow-xl transition-shadow"
             >
               <QuoteIcon className="h-10 w-10 text-primary/20 dark:text-8C52FF/20 absolute top-6 right-6" />
-              <p className="text-lg italic relative mb-6">
-                {testimonial.quote}
-              </p>
-              <div className="flex items-center mt-auto">
+              <div className="flex items-center mb-4">
                 <div className="h-12 w-12 relative rounded-full overflow-hidden border border-border dark:border-primary/20">
                   <Image
-                    src={`/avatars/avatar-${i + 1}.jpg`}
+                    src={`/avatars/avatar-${(i % 4) + 1}.jpg`}
                     alt={testimonial.name}
                     fill
                     className="object-cover"
@@ -71,8 +77,19 @@ export default function CustomerTestimonials({
                   <p className="text-sm text-muted-foreground">
                     {testimonial.title}
                   </p>
+                  <div className="flex items-center mt-1">
+                    {[...Array(testimonial.rating)].map((_, idx) => (
+                      <Star
+                        key={idx}
+                        className="h-4 w-4 text-yellow-400 fill-yellow-400 mr-0.5"
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
+              <p className="text-base italic relative mb-2 flex-1">
+                “{testimonial.quote}”
+              </p>
             </blockquote>
           ))}
         </div>

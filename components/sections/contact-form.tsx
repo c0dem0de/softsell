@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Section } from "@/components/ui/section";
 import { cn } from "@/lib/utils";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, Info } from "lucide-react";
 
 interface ContactFormProps {
   title?: string;
@@ -111,7 +111,6 @@ export default function ContactForm({
 
     if (validateForm()) {
       // Form is valid, simulate submission
-      console.log("Form submitted:", formData);
       setIsSubmitted(true);
 
       // Reset form data
@@ -153,108 +152,117 @@ export default function ContactForm({
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={cn(
-                    "w-full rounded-md border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50",
-                    errors.name && "border-red-500"
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-7 bg-background/80 dark:bg-background/40 p-8 rounded-xl border border-border/30 shadow-lg"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className={cn(
+                      "w-full rounded-md border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50",
+                      errors.name && "border-red-500"
+                    )}
+                    placeholder="John Doe"
+                  />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-500">{errors.name}</p>
                   )}
-                  placeholder="John Doe"
-                />
-                {errors.name && (
-                  <p className="mt-1 text-sm text-red-500">{errors.name}</p>
-                )}
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Email Address <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={cn(
+                      "w-full rounded-md border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50",
+                      errors.email && "border-red-500"
+                    )}
+                    placeholder="john@company.com"
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                  )}
+                </div>
               </div>
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={cn(
-                    "w-full rounded-md border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50",
-                    errors.email && "border-red-500"
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Company <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className={cn(
+                      "w-full rounded-md border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50",
+                      errors.company && "border-red-500"
+                    )}
+                    placeholder="Your Company"
+                  />
+                  {errors.company && (
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.company}
+                    </p>
                   )}
-                  placeholder="john@company.com"
-                />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-500">{errors.email}</p>
-                )}
-              </div>
+                </div>
 
-              <div>
-                <label
-                  htmlFor="company"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className={cn(
-                    "w-full rounded-md border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50",
-                    errors.company && "border-red-500"
+                <div>
+                  <label
+                    htmlFor="licenseType"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    License Type <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    id="licenseType"
+                    name="licenseType"
+                    value={formData.licenseType}
+                    onChange={handleChange}
+                    className={cn(
+                      "w-full rounded-md border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50",
+                      errors.licenseType && "border-red-500"
+                    )}
+                  >
+                    <option value="">Select License Type</option>
+                    {licenseTypes.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.licenseType && (
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.licenseType}
+                    </p>
                   )}
-                  placeholder="Your Company"
-                />
-                {errors.company && (
-                  <p className="mt-1 text-sm text-red-500">{errors.company}</p>
-                )}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="licenseType"
-                  className="block text-sm font-medium mb-2"
-                >
-                  License Type
-                </label>
-                <select
-                  id="licenseType"
-                  name="licenseType"
-                  value={formData.licenseType}
-                  onChange={handleChange}
-                  className={cn(
-                    "w-full rounded-md border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50",
-                    errors.licenseType && "border-red-500"
-                  )}
-                >
-                  <option value="">Select License Type</option>
-                  {licenseTypes.map((type) => (
-                    <option key={type} value={type}>
-                      {type}
-                    </option>
-                  ))}
-                </select>
-                {errors.licenseType && (
-                  <p className="mt-1 text-sm text-red-500">
-                    {errors.licenseType}
-                  </p>
-                )}
+                </div>
               </div>
 
               <div>
@@ -262,7 +270,7 @@ export default function ContactForm({
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                 >
-                  Message
+                  Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   id="message"
@@ -281,10 +289,16 @@ export default function ContactForm({
                 )}
               </div>
 
+              <div className="flex items-center gap-2 bg-muted/40 rounded-md p-3 text-sm text-muted-foreground">
+                <Info className="h-4 w-4 text-primary" />
+                We respect your privacy. Your information will only be used to
+                contact you about your inquiry.
+              </div>
+
               <div className="flex justify-center pt-4">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2.5 text-base font-medium text-primary-foreground hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition"
                 >
                   Send Message
                   <Send className="h-4 w-4" />

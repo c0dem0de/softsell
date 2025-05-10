@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle"; // Make sure this exists
 
 interface MainNavbarProps {
   logo?: React.ReactNode;
@@ -92,7 +93,7 @@ export default function MainNavbar({
 
           {/* Desktop Navigation */}
           {showNavigation && (
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-8 flex-1 justify-end">
               {menuItems.map((item, index) => (
                 <a
                   key={index}
@@ -102,13 +103,13 @@ export default function MainNavbar({
                   {item.title}
                 </a>
               ))}
-
               {/* CTA Button */}
               {actions.map((action, index) => (
                 <Button key={index} asChild size="sm" variant="default">
                   <a href={action.href}>{action.text}</a>
                 </Button>
               ))}
+              <ThemeToggle /> {/* Add this as the last item on the right */}
             </nav>
           )}
 

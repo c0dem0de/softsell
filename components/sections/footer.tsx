@@ -134,10 +134,10 @@ export default function Footer({ className }: FooterProps) {
             <h3 className="text-lg font-semibold dark:text-8C52FF">Contact</h3>
             <address className="not-italic space-y-2 text-sm text-muted-foreground dark:text-B2BFE2">
               <p>SoftSell Inc.</p>
-              <p>123 Software Lane</p>
-              <p>San Francisco, CA 94103</p>
+              <p>123 Soft Colony</p>
+              <p>Softwork Street, SW 94103</p>
               <p>Email: info@softsell.example</p>
-              <p>Phone: (555) 123-4567</p>
+              <p>Phone: (555) 334-887-1234</p>
             </address>
             <div className="flex items-center gap-2 pt-2">
               <span className="text-sm text-muted-foreground dark:text-E0BBE4">
@@ -151,9 +151,6 @@ export default function Footer({ className }: FooterProps) {
         <div className="mt-12 flex flex-col items-center justify-between border-t border-border/20 pt-6 dark:border-8C52FF/30 md:flex-row">
           <p className="text-sm text-muted-foreground dark:text-B2BFE2/70">
             &copy; {currentYear} SoftSell Inc. All rights reserved.
-          </p>
-          <p className="mt-2 text-xs text-muted-foreground/70 dark:text-778DA9 md:mt-0">
-            This is a demo website created for a coding assignment.
           </p>
         </div>
       </div>

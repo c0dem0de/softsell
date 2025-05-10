@@ -138,26 +138,26 @@
   }
 
   .dark {
-    /* Using the darker background color you requested */
-    --background: #17202a; /* Dark blue-black */
-    --foreground: #b2bfe2; /* Light lavender */
-    --card: #1c2733; /* Slightly lighter than background */
+    --background: #0a0d12; /* much darker than before */
+    --foreground: #b2bfe2;
+    --card: #13181f;
     --card-foreground: #b2bfe2;
-    --popover: #1c2733;
+    --popover: #13181f;
     --popover-foreground: #b2bfe2;
-    --primary: #8c52ff; /* Vibrant purple */
+    --primary: #8c52ff;
     --primary-foreground: #ffffff;
-    --secondary: #778da9; /* Muted blue */
+    --secondary: #778da9;
     --secondary-foreground: #ffffff;
-    --muted: #2c3e50; /* Darker muted shade */
-    --muted-foreground: #a7ffeb; /* Mint accent */
-    --accent: #e0bbe4; /* Soft lavender */
+    --muted: #1a232e;
+    --muted-foreground: #a7ffeb;
+    --accent: #e0bbe4;
     --accent-foreground: #17202a;
     --destructive: #ff5470;
-    --destructive-foreground: #ffffff;
-    --border: #2c3e50; /* Darker border */
-    --input: #2c3e50;
-    --ring: #8c52ff; /* Vibrant purple */
+    --destructive-foreground: #fff;
+    --border: #232b36;
+    --input: #232b36;
+    --ring: #8c52ff;
+    --radius: 0.75rem;
   }
 }
 
