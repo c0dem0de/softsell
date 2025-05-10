@@ -8,6 +8,11 @@ SoftSell is a Next.js application that provides a platform for buying and sellin
 - 💬 **Interactive Chat Assistant**: AI-powered chatbot with predefined prompts to help users navigate the platform
 - 📱 **Fully Responsive**: Optimized for all device sizes from mobile to desktop
 - 🚀 **Next.js App Router**: Built with the latest Next.js features
+- 🧩 **shadcn/ui Components**: Uses shadcn/ui for accessible, theme-aware UI elements
+- 🌗 **Custom Theming**: Easily switch between light and dark modes, with a much darker dark mode background for better contrast
+- ⭐ **Customer Testimonials**: Improved testimonial section with avatars, ratings, and modern card design
+- 📋 **How It Works**: Step-by-step horizontal process flow, scrollable and mobile-friendly
+- 📞 **Contact Form**: Accessible, validated, and visually improved contact form with clear feedback
 
 ## Design Choices
 
@@ -51,3 +56,9 @@ pnpm dev
 # or
 bun dev
 ```
+
+```
+
+```
+
+> Developed as a part of Credex Internship Assignment.
